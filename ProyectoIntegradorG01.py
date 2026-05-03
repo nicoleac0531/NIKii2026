@@ -19,5 +19,3 @@ else:
 
 #Output
 print ("El resultado es: " + mensaje )
-
-Blalablablabla
