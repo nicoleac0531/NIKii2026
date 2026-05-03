@@ -24,7 +24,7 @@ porcentaje_defectos=(botellas_defectuosas/botellas_producidas)*100
 if porcentaje_defectos <= 5.0:
     mensaje = "¡Meta de calidad cumplida!"
 else: 
-    mensaje = "Alerta. Meta de calidad NO cumplida"
+    mensaje = "Alerta. Meta de calidad NO cumplida."
 
 #Output
 
