@@ -28,5 +28,10 @@ else:
 
 #Output
 
+# Mostrar un resumen básico de los datos registrados.
+print("\n--- Reporte de Calidad del Turno ---")
+print("Revisión a cargo de: " + operario_revision)
+print("Porcentaje de defectos calculado: " + str(porcentaje_defectos) + "%") 
+
 # 5. Mostrar un mensaje que diga si el turno cumplió o no la meta de calidad (< 5%)
 print ("El resultado es: " + mensaje )
