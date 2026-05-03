@@ -18,5 +18,3 @@ else porcentaje_defectos > 5.0:
 
 #Output
 print ("El resultado es: " + mensaje )
-
-prueba mmmmm
