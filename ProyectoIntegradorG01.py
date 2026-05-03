@@ -22,9 +22,9 @@ botellas_defectuosas = int ( input ("Digite el número de botellas defectuosas "
 porcentaje_defectos=(botellas_defectuosas/botellas_producidas)*100
 
 if porcentaje_defectos <= 5.0:
-    mensaje = "Meta cumplida"
+    mensaje = "¡Meta de calidad cumplida!"
 else: 
-    mensaje = "Meta no cumplida"
+    mensaje = "Alerta. Meta de calidad NO cumplida"
 
 #Output
 
