@@ -8,13 +8,13 @@ mensaje:str = ''
 #Input
 
 # 1. Pedir al usuario el nombre del operario que está haciendo la revisión.
-operario_revision = str ( input ("Digite el nombre del operario a cargo de la revisión "))
+operario_revision = str ( input ("Digite el nombre del operario a cargo de la revisión: "))
 
 # 2. Pedir el número de botellas producidas en el turno (número entero)
-botellas_producidas = int ( input ("Digite el número de botellas producidas en el turno "))
+botellas_producidas = int ( input ("Digite el número de botellas producidas en el turno: "))
 
 # 3. Pedir el número de botellas defectuosas encontradas (número entero)
-botellas_defectuosas = int ( input ("Digite el número de botellas defectuosas "))
+botellas_defectuosas = int ( input ("Digite el número de botellas defectuosas: "))
 
 #Process
 
