@@ -29,9 +29,10 @@ def linea_mas_eficiente(lista_lineas):
     mejor_nombre= ''
     mejor_eficiencia= -1  
     for linea in lista_lineas:
-        if linea['eficiencia'] > mejor_eficiencia:
-            mejor_eficiencia = linea ['eficiencia']
-            mejor_nombre = linea ['nombre']
+        eficiencia = calcular_eficiencia(linea['producidas'], linea['rechazadas'])  # ✅ Fix
+        if eficiencia > mejor_eficiencia:
+            mejor_eficiencia = eficiencia
+            mejor_nombre = linea['nombre']
     return mejor_nombre
 
 #Función 3: validar_produccion(valor)
