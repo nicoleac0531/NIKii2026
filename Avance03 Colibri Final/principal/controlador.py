@@ -55,7 +55,7 @@ def registrar_turno() -> None:
     resumen = modelo.generar_resumen_dia(gran_total_producido, mejor_turno_numero, mejor_turno_eficiencia, peor_turno_numero, peor_turno_eficiencia)
     vista.mostrar_reporte(resumen)
 
-#FALTA AGREGAR LO DEL CONTROLADOR DEL MENU Y LAS FUNCIONALIDADES 3 Y 4
+#FALTA AGREGAR LO DEL CONTROLADOR DEL MENU, LA FUNCIONALIDAD 4
 
 # Módulo de Mario: estado operativo de máquinas
 def opcion_estado_maquina() -> None:
