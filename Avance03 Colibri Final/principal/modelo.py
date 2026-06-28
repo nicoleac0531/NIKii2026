@@ -116,7 +116,6 @@ def generar_resumen_dia(gran_total_producido, mejor_turno_numero, mejor_turno_ef
     lineas = []
     lineas.append('RESUMEN GLOBAL DEL DÍA - PLANTA COLIBRÍ')
     lineas.append('Total producido: ' + str(gran_total_producido) + ' botellas')
-    lineas.append('Turno más eficiente: ' + str(mejor_turno_numero) + str(round(mejor_turno_eficiencia, 2)) + '% ')
-    lineas.append('Turno menos eficiente: ' + str(peor_turno_numero) + str(round(peor_turno_eficiencia, 2)) + '% ')
-
+    lineas.append('Turno más eficiente: #' + str(mejor_turno_numero) + ' (' + str(round(mejor_turno_eficiencia, 2)) + '%)')
+    lineas.append('Turno menos eficiente: #' + str(peor_turno_numero) + ' (' + str(round(peor_turno_eficiencia, 2)) + '%)')
     return '\n'.join(lineas)
