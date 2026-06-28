@@ -135,3 +135,9 @@ def mostrar_mensaje(mensaje: str) -> None:
     mensaje (str): El texto a mostrar que se escoja dentro del controlador.
     """
     print(mensaje)
+def mostrar_despedida() -> None:
+    '''
+    Muestra el mensaje de cierre para el sistema
+    '''
+    limpiar_consola
+    print('Sesión finalizada')
