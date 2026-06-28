@@ -58,8 +58,23 @@ def registrar_turno() -> None:
     vista.mostrar_reporte(resumen)
 
 #FALTA AGREGAR LO DEL CONTROLADOR DEL MENU Y LAS FUNCIONALIDADES 3 Y 4
-    
-    
+
+# Módulo de Mario: estado operativo de máquinas
+def opcion_estado_maquina() -> None:
+    '''
+    Organiza el flujo para evaluar el estado operativo de una máquina.
+    Solicita los datos al usuario a través de la vista, los procesa
+    en el modelo y muestra el resultado.
+    '''
+    datos = vista.pedir_datos_maquina()
+    resultado = modelo.calcular_estado_maquina(
+        nombre_maquina = datos['nombre_maquina'],
+        fallas_semana = datos['fallas_semana'],
+        tiempo_inactividad_horas = datos['tiempo_inactividad_horas']
+    )
+    vista.mostrar_estado_maquina(resultado)
+
+    # Orquestador principal del sistema
     opcion: int = -1
     while opcion != 0:
         opcion = vista.mostar_menu_principal()
@@ -75,7 +90,7 @@ def registrar_turno() -> None:
             case 5:
                 print("LUEGO")
             case 6:
-                print("LUEGO")
+                opcion_estado_maquina()
             case 7:
                 print("LUEGO")
             case 8:
