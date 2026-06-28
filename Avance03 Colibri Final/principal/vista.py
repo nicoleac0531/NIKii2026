@@ -130,3 +130,24 @@ def mostrar_estado_maquina(resultado: str) -> None:
     imprimir_titulo_decorado('DIAGNÓSTICO DE MÁQUINA')
     print(resultado)
     pausar()
+
+#FUNCIONALIDAD 3 - PARA VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER
+
+def opcion_ver_historial():
+    """
+    Pide al usuario la fecha del reporte que desea consultar
+    y lo muestra en pantalla si existe.
+    """
+    print("Reportes históricos")
+    print("Formato de fecha: YYYY-MM-DD  (ejemplo: 2026-06-25)")
+
+    fecha_ingresada = input("Ingrese la fecha del reporte: ").strip()
+    nombre_archivo = f"reporte_{fecha_ingresada}.txt"
+
+    contenido = controlador.ejecutar_leer_reporte(nombre_archivo)
+
+    if contenido:
+        print(f"Contenido de '{nombre_archivo}'")
+        print(contenido)
+    else:
+        print(f"No se encontró un reporte para la fecha '{fecha_ingresada}'.")
