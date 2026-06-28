@@ -56,8 +56,65 @@ def validar_produccion(valor):
 
 #Función 4: 
 
+#La siguiente función 04 del programa trabajará reportes del turno.
+#Se procesará información cuantitativa de los turnos del día ingresados por el usuario.
+#Asimismo, el sistema devolverá información cualitativa en un informe completo detallado al usuario. 
+from typing import list, dict
 
+def generar_reporte_turno(numero_turno, lista_lineas):
+    """
+    El sistema recibe información del usuario apartir del turno en función en la planta Colibrí.
+    Para ello, se calcula totalidad y eficiencia.
+    Con el resultado de generar un reporte en texto al usuario. 
+    """ 
 
+#Se genera las variables clave para que el usuario ingrese los valores de producción del turno.
+    total_producidas = 0
+    total_rechazadas = 0 
+
+#Se realiza el inicio del programa para el usuario.
+reporte = f"   Reporte del turno No.{numero_turno}  \n"
+reporte += "Linea\tProducidas\tRechazadas\tEficiencia\n"  
+
+#Inicia el ciclo para revisar las listas.
+for linea in lista_lineas: 
+
+#Luego, se extrae los datos de cada diccionario de forma directa.
+        nombre = linea["nombre"]
+        producidas = linea["producidas"]
+        rechazadas = linea["rechazadas"]
+        
+#Se realiza una suma de los totales
+        total_producidas += producidas
+        total_rechazadas += rechazadas
+        
+#Se realiza un calculo de la eficiencia de la línea ingresada.
+        total_botellas = producidas + rechazadas
+        
+        if total_botellas == 0:
+            eficiencia = 0.0
+        else:
+            eficiencia = (producidas / total_botellas) * 100
+            
+#Se separa las columnas con un espacio largo para que queden ordenadas
+        reporte += f"{nombre}\t{producidas}\t{rechazadas}\t{eficiencia:.1f}%\n" 
+        
+#Finalmente, se calcula los totales del turno completo.
+    gran_total = total_producidas + total_rechazadas
+    
+    if gran_total == 0:
+        eficiencia_global = 0.0
+    else:
+        eficiencia_global = (total_producidas / gran_total) * 100
+        
+#Reporte de salida al usuario.
+    reporte += " \n" 
+    reporte += f"Total Producidas: {total_producidas}\n"
+    reporte += f"Total Rechazadas: {total_rechazadas}\n"
+    reporte += f"Eficiencia Global: {eficiencia_global:.1f}%\n"
+    
+#Se genera un texto final.
+    return reporte
 
 #Función 5 (Libre): 
 
