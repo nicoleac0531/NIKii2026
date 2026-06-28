@@ -7,7 +7,7 @@ def calcular_eficiencia(producidas, rechazadas):
     '''Calcula el porcentaje de eficiencia de una determinada línea de producción
     
     Parámetros: 
-    producidas (int): Cantidad de bottelas producidas en la línea evaluada.
+    producidas (int): Cantidad de botellas producidas en la línea evaluada.
     rechazadas (int): Cantidad de botellas rechazadas en la línea evaluada.
 
     Retorna:
@@ -116,7 +116,7 @@ def generar_resumen_dia(gran_total_producido, mejor_turno_numero, mejor_turno_ef
     lineas = []
     lineas.append('RESUMEN GLOBAL DEL DÍA - PLANTA COLIBRÍ')
     lineas.append('Total producido: ' + str(gran_total_producido) + ' botellas')
-    lineas.append('Turno más eficiente: ' + str(mejor_turno_numero) + str(round(mejor_turno_eficiencia, 2)) + '%')
-    lineas.append('Turno menos eficiente: ' + str(peor_turno_numero) + str(round(peor_turno_eficiencia, 2)) + '%')
+    lineas.append('Turno más eficiente: ' + str(mejor_turno_numero) + str(round(mejor_turno_eficiencia, 2)) + '% ')
+    lineas.append('Turno menos eficiente: ' + str(peor_turno_numero) + str(round(peor_turno_eficiencia, 2)) + '% ')
 
     return '\n'.join(lineas)
