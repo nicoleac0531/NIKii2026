@@ -63,9 +63,14 @@ def validar_produccion(valor):
 
 def generar_reporte_turno(numero_turno, lista_lineas):
     """
-    El sistema recibe información del usuario apartir del turno en función en la planta Colibrí.
-    Para ello, se calcula totalidad y eficiencia.
-    Con el resultado de generar un reporte en texto al usuario. 
+    Genera el reporte del turno como texto
+
+    Parámetros: 
+    numero_turno (int): Número del turno a reportar.
+    lista_lineas (list): Lista de diccionarios con los datos de cada linea.
+
+    Retorna: 
+    str: El reporte completo del turno.
     """ 
 
     #Se genera las variables clave para que el usuario ingrese los valores de producción del turno.
@@ -89,29 +94,21 @@ def generar_reporte_turno(numero_turno, lista_lineas):
         total_rechazadas += rechazadas
             
     #Se realiza un calculo de la eficiencia de la línea ingresada.
-        total_botellas = producidas + rechazadas
-            
-        if total_botellas == 0:
-            eficiencia = 0.0
-        else:
-            eficiencia = (producidas / total_botellas) * 100
+        
+        eficiencia = calcular_eficiencia(producidas, rechazadas)
                 
     #Se separa las columnas con un espacio largo para que queden ordenadas
         reporte += f"{nombre}\t{producidas}\t{rechazadas}\t{eficiencia:.1f}%\n" 
             
     #Finalmente, se calcula los totales del turno completo.
-        gran_total = total_producidas + total_rechazadas
-            
-        if gran_total == 0:
-                eficiencia_global = 0.0
-        else:
-                eficiencia_global = (total_producidas / gran_total) * 100
+        
+    eficiencia_global = calcular_eficiencia(total_producidas, total_rechazadas)
             
     #Reporte de salida al usuario.
-        reporte += " \n" 
-        reporte += f"Total Producidas: {total_producidas}\n"
-        reporte += f"Total Rechazadas: {total_rechazadas}\n"
-        reporte += f"Eficiencia Global: {eficiencia_global:.1f}%\n"
+    reporte += " \n" 
+    reporte += f"Total Producidas: {total_producidas}\n"
+    reporte += f"Total Rechazadas: {total_rechazadas}\n"
+    reporte += f"Eficiencia Global: {eficiencia_global:.1f}%\n"
         
     #Se genera un texto final.
     return reporte
