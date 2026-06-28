@@ -76,6 +76,28 @@ def opcion_estado_maquina() -> None:
 
 # Orquestador principal del sistema
 def ejecutar() -> None:
+    """
+    Ejecuta el ciclo principal del programa.
+    """
+    opcion = -1
+    while opcion != 0:
+        opcion = vista.mostrar_menu_principal()
+        match opcion:
+            case 1:
+                registrar_turno()
+            case 2:
+                opcion_estado_maquina()
+            case 3:
+                vista.mostrar_mensaje('Reporte turno, falta esto funcionalidad 3 (creo)')
+            case 4:
+                vista.mostrar_mensaje('Estadisticas, también falta esto, funcionalidad 4(creo)')
+            case 0:
+                vista.mostrar_despedida()
+
+
+
+
+def ejecutar() -> None:
     opcion: int = -1
     while opcion != 0:
         opcion = vista.mostar_menu_principal()
