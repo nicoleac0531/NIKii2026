@@ -47,13 +47,14 @@ def mostrar_menu_principal()  -> int:
     int: La opción que el usuario escogió
     '''
     limpiar_consola()
-    return mostrar_menu( 
-        'SISTEMA PLANTA COLIBRÍ',
-        [ 'REGISTRAR TURNO DE PRODUCCIÓN',
-          'VER REPORTE',
-          'VER ESTADÍSTICAS'
-        ],
-
+    return mostrar_menu(
+        "SISTEMA PLANTA COLIBRÍ",
+        [
+            "REGISTRAR TURNO DE PRODUCCIÓN",
+            "ESTADO OPERATIVO DE MÁQUINAS"
+            "VER REPORTE",
+            "VER ESTADÍSTICAS",
+        ]
     )
 
 #Función 2: Pide la cantidad de turno del día
