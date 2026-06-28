@@ -1,5 +1,3 @@
-# controlador.py
-
 import modelo
 import vista
 from eii_utils import pausar
@@ -88,24 +86,11 @@ def ejecutar() -> None:
             case 2:
                 opcion_estado_maquina()
             case 3:
-                vista.mostrar_mensaje('Reporte turno, falta esto funcionalidad 3 (creo)')
+                vista.ver_historial()
             case 4:
                 vista.mostrar_mensaje('Estadisticas, también falta esto, funcionalidad 4(creo)')
             case 0:
                 vista.mostrar_despedida()
-
-
-
-
-
-def ejecutar_salvar_reporte_nube(lista_lineas):
-    '''
-    Solicita al modelo guardar el reporte del día.
-    Retorna el nombre del archivo.
-    '''
-    reporte = modelo.generar_reporte_turno(lista_lineas)
-    nombre_archivo = modelo.salvar_reporte(reporte)
-    return nombre_archivo
 
 
 def ejecutar_leer_reporte(nombre_archivo):
