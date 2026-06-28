@@ -13,6 +13,8 @@ def calcular_eficiencia(producidas, rechazadas):
     Retorna:
     float: El nivel de eficiencia expresado en formato de porcentaje (%).
     '''
+    if producidas == 0:
+        return 0.0
     return (producidas - rechazadas) / producidas * 100
 
 #Función 2: linea_mas_eficiente(lista_lineas)
@@ -51,3 +53,40 @@ def validar_produccion(valor):
         return numero > 0
     except:
         return False
+
+#Función 4: 
+
+
+
+
+#Función 5: 
+
+
+
+
+
+
+
+
+#Función para generar un resumen de todo el día 
+def generar_resumen_dia(gran_total_producido, mejor_turno_numero, mejor_turno_eficiencia, peor_turno_numero, peor_turno_eficiencia):
+    '''
+    Genera un resumen global de los datos de todo el día
+
+    Parámetros: 
+    gran_total_producido (int): Total de botellas producidas en el día.
+    mejor_turno_numero (int): Nombre del turno más eficiente.
+    mejor_turno_eficiencia (float): Eficiencia del mejor turno.
+    peor_turno_numero (int): Nombre del turno menos eficiente.
+    peor_turno_eficiencia (float): Eficiencia del peor turno.
+
+    Retorna:
+    str: El resumen global del día como texto.
+    '''
+    lineas = []
+    lineas.append('RESUMEN GLOBAL DEL DÍA - PLANTA COLIBRÍ')
+    lineas.append('Total producido: ' + str(gran_total_producido) + 'botellas3')
+    lineas.append('Turno más eficiente: ' + str(mejor_turno_numero) + str(round(mejor_turno_eficiencia, 2)) + '%')
+    lineas.append('Turno menos eficiente: ' + str(peor_turno_eficiencia) + str(round(peor_turno_eficiencia, 2)) + '%')
+
+    return '\n'.join(lineas)
