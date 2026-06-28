@@ -59,16 +59,46 @@ def validar_produccion(valor):
 
 
 
-#Función 5: 
+#Función 5 (Libre): 
+
+# Resuelve el problema de Mario: Determinar el estado operativo de cada máquina de la Planta Colibrí en  base a su historial de fallas y tiempo de parada.
+
+def calcular_estado_maquina(nombre_maquina: str, fallas_semana: int, tiempo_inactividad_horas: float) -> str:
+    '''
+    Se encarga de evaluar el estado operativo de una máquina de la planta según la cantidad de fallas en la semana y el tiempo de inactividad.
+
+    Parametros:
+        nombre_maquina (str): Nombre de la maquina a evaluar.
+        fallas_semana (int): Cantidad de fallas que tuvo la máquina en la semana. 
+        tiempo_inactividad_horas (float): Tiempo total en horas que la máquina estuvo inactiva.
+
+
+    Retorna: 
+        str: Estado de la máquina: "NORMAL: La máquina está funcionando correctamente", "ALERTA: la máquina presenta fallas moderadas" o "CRÍTICO: La máquina ha presentado muchas fallas, se recomienda mantenimiendo preventivo".
+        Y incluye el nombre de la máquina en el mensaje.  
+
+    '''
+    
+    # Evaluar el estado de la máquina según las condiciones
+
+    # ESTADO CRÍTICO: muchas fallas o tiempo de inactividad muy largo 
+
+    if fallas_semana >= 4 or tiempo_inactividad_horas >= 10: 
+        estado = f"CRÍTICO: La máquina {nombre_maquina} ha presentado muchas fallas, se recomienda mantenimiento preventivo."
+
+    # ESTADO DE ALERTA: algunas fallas o tiempo de inactividad moderado    
+    elif fallas_semana >= 2 or tiempo_inactividad_horas >= 4: 
+        estado = f"ALERTA: La máquina {nombre_maquina} presenta fallas moderadas, se recomienda revisión."
+    else: 
+
+    # ESTADO NORMAL: pocas fallas y tiempo de inactividad corto
+        estado = f"NORMAL: La máquina {nombre_maquina} está funcionando correctamente."
+    
+    return f"Máquina: {nombre_maquina} \nFallas presentadas en la semana: {fallas_semana} \nTiempo de inactividad (horas): {tiempo_inactividad_horas} \nEstado operativo: {estado}"
 
 
 
-
-
-
-
-
-#Función para generar un resumen de todo el día 
+# Función para generar un resumen de todo el día 
 def generar_resumen_dia(gran_total_producido, mejor_turno_numero, mejor_turno_eficiencia, peor_turno_numero, peor_turno_eficiencia):
     '''
     Genera un resumen global de los datos de todo el día
