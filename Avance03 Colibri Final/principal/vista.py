@@ -51,7 +51,7 @@ def mostrar_menu_principal()  -> int:
         "SISTEMA PLANTA COLIBRÍ",
         [
             "REGISTRAR TURNO DE PRODUCCIÓN",
-            "ESTADO OPERATIVO DE MÁQUINAS"
+            "ESTADO OPERATIVO DE MÁQUINAS",
             "VER REPORTE",
             "VER ESTADÍSTICAS",
         ]
