@@ -74,7 +74,8 @@ def opcion_estado_maquina() -> None:
     )
     vista.mostrar_estado_maquina(resultado)
 
-    # Orquestador principal del sistema
+# Orquestador principal del sistema
+def ejecutar() -> None:
     opcion: int = -1
     while opcion != 0:
         opcion = vista.mostar_menu_principal()
