@@ -93,32 +93,3 @@ def ejecutar() -> None:
                 vista.mostrar_mensaje('Estadisticas, también falta esto, funcionalidad 4(creo)')
             case 0:
                 vista.mostrar_despedida()
-
-
-
-
-def ejecutar() -> None:
-    opcion: int = -1
-    while opcion != 0:
-        opcion = vista.mostar_menu_principal()
-        match opcion:
-            case 1:
-                opcion_uno()
-            case 2:
-                print("LUEGO")
-            case 3:
-                print("LUEGO")
-            case 4:
-                print("LUEGO")
-            case 5:
-                print("LUEGO")
-            case 6:
-                opcion_estado_maquina()
-            case 7:
-                print("LUEGO")
-            case 8:
-                print("LUEGO")
-            case 9:
-                print("LUEGO")
-            case 0:
-                vista.mostar_final()
