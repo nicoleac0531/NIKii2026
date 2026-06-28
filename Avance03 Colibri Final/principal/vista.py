@@ -50,8 +50,8 @@ def mostrar_menu_principal()  -> int:
     return mostrar_menu( 
         'SISTEMA PLANTA COLIBRÍ',
         [ 'REGISTRAR TURNO DE PRODUCCIÓN',
-          'VER REPORTE DEL DÍA',
-          'SALIR'
+          'VER REPORTE',
+          'VER ESTADÍSTICAS'
         ],
 
     )
@@ -122,4 +122,15 @@ def mostrar_datos_linea_correctos(linea: dict) -> None:
     Parámetros: 
     linea (dict): Diccionario con nombre, producidas y rechazadas.
     '''
-    print(linea["nombre"] + ": " + str(linea["producidas"]) + " Producidas | " + str(linea["rechazadas"]) + " Rechazadas")
+   print(linea["nombre"] + ": " + str(linea["producidas"]) + " producidas | " + 
+          str(linea["rechazadas"]) + " rechazadas | Eficiencia: " + 
+          str(round(linea["eficiencia"], 2)) + "%"
+        )
+def mostrar_mensaje(mensaje: str) -> None:
+    """
+    Muestra un mensaje general en pantalla, ayuda a que no se rompa la funcionalidad del modelo MVC el mensaje que vaya a salir para por vista. 
+
+    Parámetros:
+    mensaje (str): El texto a mostrar que se escoja dentro del controlador.
+    """
+    print(mensaje)
