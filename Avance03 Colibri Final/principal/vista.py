@@ -89,7 +89,7 @@ def mostrar_datos_linea_correctos(linea: dict) -> None:
     Parámetros: 
     linea (dict): Diccionario con nombre, producidas y rechazadas.
     '''
-   print(linea["nombre"] + ": " + str(linea["producidas"]) + " producidas | " + 
+    print(linea["nombre"] + ": " + str(linea["producidas"]) + " producidas | " + 
           str(linea["rechazadas"]) + " rechazadas | Eficiencia: " + 
           str(round(linea["eficiencia"], 2)) + "%"
         )
@@ -105,5 +105,5 @@ def mostrar_despedida() -> None:
     '''
     Muestra el mensaje de cierre para el sistema
     '''
-    limpiar_consola
+    limpiar_consola() 
     print('Sesión finalizada')
