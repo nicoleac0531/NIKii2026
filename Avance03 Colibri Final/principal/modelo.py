@@ -2,6 +2,7 @@
 #Calculos del sistema de la Planta Colibrí
 
 #Función 1: calcular_eficiencia(producidas, rechazadas)
+import datetime
 
 def calcular_eficiencia(producidas, rechazadas):
     '''Calcula el porcentaje de eficiencia de una determinada línea de producción
@@ -176,3 +177,32 @@ def generar_resumen_dia(gran_total_producido, mejor_turno_numero, mejor_turno_ef
     lineas.append('Turno más eficiente: #' + str(mejor_turno_numero) + ' (' + str(round(mejor_turno_eficiencia, 2)) + '%)')
     lineas.append('Turno menos eficiente: #' + str(peor_turno_numero) + ' (' + str(round(peor_turno_eficiencia, 2)) + '%)')
     return '\n'.join(lineas)
+
+
+
+
+
+
+
+def salvar_reporte(contenido_reporte: str) -> str:
+
+    fecha = datetime.date.today()
+    nombre_archivo = f'reporte_{fecha}.txt'
+    
+    with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
+        archivo.write(contenido_reporte)
+    
+    return nombre_archivo  
+
+
+
+def leer_reporte(nombre_archivo: str) -> str:
+    '''
+    Lee el contenido de un reporte guardado.
+    Retorna un mensaje si el archivo no existe.
+    '''
+    try:
+        with open(nombre_archivo, 'r', encoding='utf-8') as archivo:
+            return archivo.read()
+    except FileNotFoundError:
+        return 'Archivo no encontrado.'
