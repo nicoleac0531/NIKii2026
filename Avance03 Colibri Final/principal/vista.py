@@ -1,9 +1,8 @@
-Ahora sí están corregidos los dos errores. Solo falta agregar las funciones de Mario y actualizar los imports. Te paso la vista completa con todo incluido:
 
-```python
 # vista.py
 # Interfaz de usuario del sistema Planta Colibrí
 from eii_utils import leer_rango_enteros, limpiar_consola, leer_entero, leer_flotante, leer_texto, pausar, mostrar_menu, imprimir_titulo_decorado
+import principal.controlador as controlador
 
 # Función 1: Muestra el menú principal
 def mostrar_menu_principal() -> int: 
@@ -18,7 +17,7 @@ def mostrar_menu_principal() -> int:
         [
             "REGISTRAR TURNO DE PRODUCCIÓN",
             "ESTADO OPERATIVO DE MÁQUINAS",
-            "VER REPORTE",
+            "HISTORIAL DE REPORTES",
             "VER ESTADÍSTICAS",
         ]
     )
