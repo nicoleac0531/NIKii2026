@@ -93,3 +93,25 @@ def ejecutar() -> None:
                 vista.mostrar_mensaje('Estadisticas, también falta esto, funcionalidad 4(creo)')
             case 0:
                 vista.mostrar_despedida()
+
+
+
+
+
+def ejecutar_salvar_reporte_nube(lista_lineas):
+    '''
+    Solicita al modelo guardar el reporte del día.
+    Retorna el nombre del archivo.
+    '''
+    reporte = modelo.generar_reporte_turno(lista_lineas)
+    nombre_archivo = modelo.salvar_reporte(reporte)
+    return nombre_archivo
+
+
+def ejecutar_leer_reporte(nombre_archivo):
+    '''
+    Pide al modelo leer un reporte en el historial.
+    Retorna el contenido si existe.
+    '''
+    contenido = modelo.leer_reporte(nombre_archivo)
+    return contenido
