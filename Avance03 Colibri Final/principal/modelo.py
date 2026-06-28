@@ -89,9 +89,9 @@ def calcular_estado_maquina(nombre_maquina: str, fallas_semana: int, tiempo_inac
     # ESTADO DE ALERTA: algunas fallas o tiempo de inactividad moderado    
     elif fallas_semana >= 2 or tiempo_inactividad_horas >= 4: 
         estado = f"ALERTA: La máquina {nombre_maquina} presenta fallas moderadas, se recomienda revisión."
-    else: 
-
+    
     # ESTADO NORMAL: pocas fallas y tiempo de inactividad corto
+    else: 
         estado = f"NORMAL: La máquina {nombre_maquina} está funcionando correctamente."
     
     return f"Máquina: {nombre_maquina} \nFallas presentadas en la semana: {fallas_semana} \nTiempo de inactividad (horas): {tiempo_inactividad_horas} \nEstado operativo: {estado}"
@@ -115,8 +115,8 @@ def generar_resumen_dia(gran_total_producido, mejor_turno_numero, mejor_turno_ef
     '''
     lineas = []
     lineas.append('RESUMEN GLOBAL DEL DÍA - PLANTA COLIBRÍ')
-    lineas.append('Total producido: ' + str(gran_total_producido) + 'botellas3')
+    lineas.append('Total producido: ' + str(gran_total_producido) + ' botellas')
     lineas.append('Turno más eficiente: ' + str(mejor_turno_numero) + str(round(mejor_turno_eficiencia, 2)) + '%')
-    lineas.append('Turno menos eficiente: ' + str(peor_turno_eficiencia) + str(round(peor_turno_eficiencia, 2)) + '%')
+    lineas.append('Turno menos eficiente: ' + str(peor_turno_numero) + str(round(peor_turno_eficiencia, 2)) + '%')
 
     return '\n'.join(lineas)
