@@ -1,8 +1,9 @@
 #modelo.py
 #Calculos del sistema de la Planta Colibrí
 
-#Función 1: calcular_eficiencia(producidas, rechazadas)
 import datetime
+
+#Función 1: calcular_eficiencia(producidas, rechazadas)
 
 def calcular_eficiencia(producidas, rechazadas):
     '''Calcula el porcentaje de eficiencia de una determinada línea de producción
@@ -32,7 +33,7 @@ def linea_mas_eficiente(lista_lineas):
     mejor_nombre= ''
     mejor_eficiencia= -1  
     for linea in lista_lineas:
-        eficiencia = calcular_eficiencia(linea['producidas'], linea['rechazadas'])  # ✅ Fix
+        eficiencia = calcular_eficiencia(linea['producidas'], linea['rechazadas'])  
         if eficiencia > mejor_eficiencia:
             mejor_eficiencia = eficiencia
             mejor_nombre = linea['nombre']
@@ -84,12 +85,12 @@ def generar_reporte_turno(numero_turno, lista_lineas):
     #Inicia el ciclo para revisar las listas.
     for linea in lista_lineas: 
 
-    #Luego, se extrae los datos de cada diccionario de forma directa.
+        #Luego, se extrae los datos de cada diccionario de forma directa.
         nombre = linea["nombre"]
         producidas = linea["producidas"]
         rechazadas = linea["rechazadas"]
             
-    #Se realiza una suma de los totales
+        #Se realiza una suma de los totales
         total_producidas += producidas
         total_rechazadas += rechazadas
             
