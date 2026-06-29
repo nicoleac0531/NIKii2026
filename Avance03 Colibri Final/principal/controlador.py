@@ -92,7 +92,15 @@ def ejecutar() -> None:
             case 0:
                 vista.mostrar_despedida()
 
+#Funcionalidad 04
+def ejecutar_estadisticas(datos_limpios):
 
+    if datos_limpios > 0:
+        total, promedio, peor_turno = modelo.estadisticas_globales_mes(datos_limpios)
+        vista.mostrar_reporte_mensual(total, promedio, peor_turno)
+
+    else:
+        vista.mostrar_error_datos_vacios()
 def ejecutar_leer_reporte(nombre_archivo):
     '''
     Pide al modelo leer un reporte en el historial.
