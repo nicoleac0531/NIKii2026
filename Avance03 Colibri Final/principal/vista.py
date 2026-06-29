@@ -150,3 +150,27 @@ def ver_historial():
         print(contenido)
     else:
         print(f"No se encontró un reporte para la fecha '{fecha_ingresada}'.")
+
+#Funcionalidad 04, Estadisticas Globales
+def mostrar_reporte_mensual(total, promedio, peor_turno):
+    '''
+    Muestra las estadísticas globales del mes.
+    '''
+    limpiar_consola()
+    imprimir_titulo_decorado("ESTADÍSTICAS DEL MES — PLANTA COLIBRÍ")
+    print("Total de botellas producidas: " + str(total))
+    print()
+    print("Promedio de eficiencia por línea:")
+    for linea, prom in promedio.items():
+        print("  " + linea + ": " + str(round(prom, 2)) + "%")
+    print()
+    print("Turno con peor eficiencia: #" + str(peor_turno))
+    pausar()
+
+def mostrar_error_datos_vacios():
+    '''
+    Muestra un mensaje cuando no hay datos disponibles.
+    '''
+    limpiar_consola()
+    print("No hay datos disponibles para mostrar estadísticas.")
+    pausar()
