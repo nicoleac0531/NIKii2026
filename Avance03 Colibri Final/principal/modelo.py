@@ -197,3 +197,63 @@ def leer_reporte(nombre_archivo: str) -> str:
             return archivo.read()
     except FileNotFoundError:
         return 'Archivo no encontrado.'
+
+#Funcionalidad 04
+def estadisticas_globales_mes (datos):
+    """
+    Devuelve las estadisticas globales del mes.
+    -Total de botellas producidas por turno.
+    -Promedio de eficiencia por línea.
+    -Turno con peor eficiencia registrada.
+
+    """
+    #Se establcen los acumuladores y diccionarios
+    total_botellas = 0
+    #Por linea
+    suma_eficiencia = {}
+    cantidad_lineas = {}
+    promedios = {}
+    peor_turno = None 
+    #Por turno
+    suma_eficiencia_turno = {}
+    cantidad_lineas_turno = {}
+
+#Total de botellas
+    for fila in datos:
+        total_botellas += int(fila["botellas_producidas"])
+#Promedio por línea
+        linea = fila["nombre_linea"]
+        turno = int(fila["numero_turno"])
+        eficiencia = float(fila["eficiencia"])
+
+        #Acumulación por linea
+        if linea not in suma_eficiencia:
+            suma_eficiencia[linea] = 0
+            cantidad_lineas[linea] = 0
+
+        suma_eficiencia[linea] += eficiencia
+        cantidad_lineas[linea] += 1
+
+        #Acumulación por turno
+        if turno not in suma_eficiencia_turno:
+            suma_eficiencia_turno[turno] = 0
+            cantidad_lineas_turno[turno] = 0
+
+        suma_eficiencia_turno[turno] += eficiencia
+        cantidad_lineas_turno[turno] += 1
+
+#Calculo de promedios
+    for linea in suma_eficiencia:
+        promedios [linea] = suma_eficiencia[linea] / cantidad_lineas[linea]
+
+#Encontrar el número de turno con peor eficiencia registrada
+    peor_turno = None
+    peor_eficiencia_promedio = 200.0
+
+    for turno in suma_eficiencia_turno:
+        promedio_turno_actual = suma_eficiencia_turno[turno]/ cantidad_lineas_turno [turno]
+        if promedio_turno_actual < peor_eficiencia_promedio:
+            peor_eficiencia_promedio = promedio_turno_actual
+            peor_turno = turno
+
+    return total_botellas, promedios, peor_turno 
